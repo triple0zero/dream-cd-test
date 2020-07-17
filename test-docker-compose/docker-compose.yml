@@ -1,6 +1,6 @@
 version: '3'
 services:
   test:
-    image: "dream20200716/test:0.0.1"
+    image: "dream20200716/test:0.0.2-4"
     ports:
       - 80:80
