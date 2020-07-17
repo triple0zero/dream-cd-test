@@ -1,15 +1,13 @@
 sudo: required
 language: bash
 before_deploy:
-- eval "($ssh-agent -s)"
-- mkdir -p ~/.ssh && echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking
-  no" >> ~/.ssh/config
-- chmod 600 home.pem
+  - eval "($ssh-agent -s)"
+  - mkdir -p ~/.ssh && echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
+  - chmod 600 home.pem
 deploy:
   provider: script
   skip_cleanup: true
-  script: ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com
-    'docker-compose --version'
+  script: ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'docker-compose --version'
   on:
     branch: master
 before_install:
