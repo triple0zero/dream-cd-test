@@ -8,12 +8,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script: 
-    - ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'docker-compose --version && cd ttt/dream-cd-test && git pull && cd test-docker-compose && pwd && echo "STOP DOCKER COMPOSE" && sudo docker-compose down && sudo docker-compose up -d && sudo docker-compose ps && sudo docker ps'
-    #- ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'cd ttt/dream-cd-test && git pull'
-    #- ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'sudo docker-compose -f ~/ttt/dream-cd-test/test-docker-compose/docker-compose.yml down'
-    #- ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'sudo docker-compose -f ~/ttt/dream-cd-test/test-docker-compose/docker-compose.yml -d up'
-    #- ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'sudo docker-compose -f ~/ttt/dream-cd-test/test-docker-compose/docker-compose.yml ps'
-    #- ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'sudo docker ps'
+    - ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'docker-compose --version && cd ttt/dream-cd-test && git pull && cd test-docker-compose && pwd && echo "STOP DOCKER COMPOSE" && sudo docker-compose down && echo "START DOCKER COMPOSE" && sudo docker-compose up -d && echo "CHECK DC PS" && sudo docker-compose ps && echo "CHECK DOCKER PS" && sudo docker ps'
   on:
     branch: master
 before_install:
