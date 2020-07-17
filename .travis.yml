@@ -8,7 +8,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script: 
-    - ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'docker-compose --version && cd ttt/dream-cd-test && git pull && cd test-docker-compose && sudo docker-compose down && sudo docker-compose -d up && sudo docker-compose ps && sudo docker ps''
+    - ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'docker-compose --version && cd ttt/dream-cd-test && git pull && cd test-docker-compose && sudo docker-compose down && sudo docker-compose -d up && sudo docker-compose ps && sudo docker ps'
     #- ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'cd ttt/dream-cd-test && git pull'
     #- ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'sudo docker-compose -f ~/ttt/dream-cd-test/test-docker-compose/docker-compose.yml down'
     #- ssh -i home.pem ubuntu@ec2-18-223-151-157.us-east-2.compute.amazonaws.com 'sudo docker-compose -f ~/ttt/dream-cd-test/test-docker-compose/docker-compose.yml -d up'
