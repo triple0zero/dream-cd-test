@@ -1,4 +1,5 @@
 sudo: required
+language: bash
 before_deploy:
 - eval "($ssh-agent -s)"
 - mkdir -p ~/.ssh && echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking
